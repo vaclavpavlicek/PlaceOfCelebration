@@ -40,8 +40,18 @@ public class Main {
 
     public static int findFirstHousePosition(int[] housesPositions) {
         int result = Integer.MAX_VALUE;
-        for (int number :housesPositions) {
+        for (int number : housesPositions) {
             if (result > number) {
+                result = number;
+            }
+        }
+        return result;
+    }
+
+    public static int findLastHousePosition(int[] housesPositions) {
+        int result = Integer.MIN_VALUE;
+        for (int number : housesPositions) {
+            if (result < number) {
                 result = number;
             }
         }

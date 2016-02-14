@@ -27,4 +27,9 @@ public class MainTest {
     public void shouldFindFirstHousePosition() {
         assertEquals(3, Main.findFirstHousePosition(Main.readPositionsOfHouses("/home/vaclav/IdeaProjects/PlaceOfCelebration/inputs/test.txt")));
     }
+
+    @Test
+    public void shouldFindLastHousePosition() {
+        assertEquals(25, Main.findLastHousePosition(Main.readPositionsOfHouses("/home/vaclav/IdeaProjects/PlaceOfCelebration/inputs/test.txt")));
+    }
 }
