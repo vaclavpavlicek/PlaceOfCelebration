@@ -22,7 +22,7 @@ public class Main {
 
     public static int[] readPositionsOfHouses(String pathToInputFile) {
         int[] result = null;
-        String allLines = "";
+        String allLines;
         try (Stream<String> lines = Files.lines(Paths.get(pathToInputFile))) {
             allLines = Arrays.toString(lines.toArray());
             result = new int[Integer.parseInt(allLines.substring(1, allLines.indexOf(" ") - 1))];
@@ -66,6 +66,14 @@ public class Main {
         } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        int[] housesPosition = readPositionsOfHouses("path to input file");
+        int firstHousePosition = findFirstHousePosition(housesPosition);
+        int lastHousePosition = findLastHousePosition(housesPosition);
+        int idealHallPosition = returnIdealPositionOfHall(firstHousePosition, lastHousePosition);
+        generateOutputFile("path to output file", idealHallPosition);
     }
 
 }
